@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body {
+	background-image: url("images/bg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    /* background-size: 100% 100%; */
+    background-size: cover;
+}
+#login:hover{
+    background-color: #8c9eb72b;
+
+}
+
+.nav-link.infolink {
+	color: white !important;
+}
+
+
+#mainlogo {
+	height: auto;
+	width: 12%;
+}

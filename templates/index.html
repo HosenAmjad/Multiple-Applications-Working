@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %} {{ request.get_host }} {% endblock title %}
+{% load static %}
+
+{% block navbar %} 
+    <div class="row" style="margin-top: 20px;">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"> <a class="nav-link" aria-current="page" href="{% url 'pollindex' %}">POLLAPP</a> </li>
+              </ul>
+
+              <ul class="navbar-nav nav Justify-content-end">
+                {% if user.is_authenticated %}
+                <li class="nav-item"> <a class="nav-link disabled">{{user.username}} |</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'userlogout' %}">LOG OUT</a></li>
+                {% else %}
+                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="{% url 'userlogin' %}">LOG IN</a> </li>
+                <li class="nav-item"> <a class="nav-link disabled" aria-current="page" href="/">|</a> </li>
+                <li class="nav-item"> <a class="nav-link active" aria-current="page" href="{% url 'signup' %}">SIGN UP</a> </li>
+                {% endif%}
+              </ul>
+             </div>
+      </nav>
+  </div>
+  {% endblock navbar %}
+{% comment %} 
+{% block mainlogo %} 
+<div class="row" style="background:#fff; padding: 20px 0px;">
+  <div class="col-12">
+        <a class="" aria-current="page" style="height: auto; width: 12%;" href="/">
+          <img src="{% static 'images/MainBanner.png' %}" class="img-fluid" style="padding: 0px; margin:0px;" alt="Nexus Technologies">
+        </a>
+  </div>
+</div>
+{% endblock mainlogo %}
+
+{% block developerview %} 
+<div class="row" style="background:#fff; margin-top: 20px;">
+  <div class="col-12">
+        <a class="" aria-current="page" style="height: auto; width: 12%;" href="/">
+          <img src="{% static 'images/MdAmjadHosen.jpg' %}" class="img-fluid" style="padding: 0px; margin:0px;" alt="Nexus Technologies">
+        </a>
+  </div>
+</div>
+{% endblock developerview %}
+
+    
+
+    {% block mainblock %} 
+    <div class="row" style="margin-top: 20px;">
+        <div class="col" style="width: 18rem;">
+            <img src="{% static 'images/python.png' %}" class="card-img-top" style="" alt="Python">
+            <div class="card-body" style="background: white;">
+                <h5 class="card-title">Python Programming Crash Course Online Training & Certificate.</h5>
+                <p class="card-text" style="text-align: Justify;">Hello guys, welcome to nexus technologies. Today we are going to see Introduction to Python. That is knowing how Python works, why should we get used to Python, why should we work using Python, etc. okay?</p>
+                <a href="#" class="btn btn-primary">Go Enroll</a>
+            </div>
+        </div>
+        <div class="col" style="width: 18rem;">
+            <img src="{% static 'images/django.png' %}" class="card-img-top" style="" alt="Python Django">
+            <div class="card-body" style="background: white;">
+                <h5 class="card-title">Python Django Programming Crash Course Online Training & Certificate.</h5>
+                <p class="card-text" style="text-align: Justify;">Hello guys, welcome to nexus technologies. In Last topic we saw a crud application with SQLite/MySQL in django. Where we learned to insert, how to integrate templates and how do we insert in databases that we saw in the last topic in django.</p>
+                <a href="#" class="btn btn-primary">Go Enroll</a>
+            </div>
+        </div>
+        <div class="col" style="width: 18rem;">
+            <img src="{% static 'images/javascript.png' %}" class="card-img-top" style="" alt="JavaScript">
+            <div class="card-body" style="background: white;">
+                <h5 class="card-title">JavaScript ES6 Programming Crash Course Online with Certificate.</h5>
+                <p class="card-text" style="text-align: Justify;">JavaScript is a text-based programming language used on both the client and server sides to make interactive web pages. Whereas HTML and CSS provide structure and style to web pages, JavaScript provides interactive elements that engage users. </p>
+                <a href="#" class="btn btn-primary">Go Enroll</a>
+            </div>
+        </div>
+    </div>
+    {% endblock mainblock %}
+
+    {% block footermenu %}
+      <div class="row" style="Justify-content: center; display: flex;">
+        <ul class="nav justify-content-center">
+          <li class="nav-item"><a class="nav-link infolink" href="{% url 'helps' %}">Help</a></li>
+          <li class="nav-item"><a class="nav-link infolink" href="{% url 'privace' %}">Privace</a></li>
+          <li class="nav-item"><a class="nav-link infolink" href="{% url 'terms' %}">Terms</a></li>
+        </ul>
+      </div>
+    {% endblock footermenu %} {% endcomment %}

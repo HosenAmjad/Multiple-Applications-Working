@@ -1,0 +1,88 @@
+{% extends "pollapp/base.html" %}
+{% block title %} Create a Vote {% endblock title %}
+{% load static %}
+
+{% comment %} {% block mainlogo %} 
+<div class="row" style="background:#fff;">
+  <div class="col-12">
+        <a class="" aria-current="page" style="height: auto; width: 12%;" href="/">
+          <img src="{% static 'images/MdAmjadHosen.jpg' %}" class="img-fluid" style="padding: 0px; margin:0px;" alt="Nexus Technologies">
+        </a>
+  </div>
+</div>
+{% endblock mainlogo %} {% endcomment %}
+
+{% block navbar %} 
+<div class="row" style="background:#fff;">
+  <div class="col-12">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        {% comment %} <a class="" aria-current="page" style="height: auto; width: 12%;" href="/">
+          <img src="{% static 'images/mainlogo.png' %}" class="card-img-top" style="" alt="Nexus Technologies">
+        </a> {% endcomment %}
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'pollindex' %}">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pollcreate' %}">CREATE</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pollresultsall' %}">RESULT</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'userlogout' %}">LOG OUT</a></li>
+          </ul>
+          <form class="d-flex" action="pollsearch" method="GET" style="margin-right: 20px;">
+            {% csrf_token %}
+            <input class="form-control me-2" type="text" name="searchpoll" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+  </div>
+</div>
+{% endblock navbar %}
+
+{% block mainblock %}
+<div class="row" style="background: #fff;  margin-top: 50px">
+  <div class="col-12">
+
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Choice Question</label>
+        <div class="col-sm-10">
+          <select class="form-select" name="selectques">
+            {% for ques in queschoices %}
+            <option value="{{ques.id}}">{{ques.question_text}}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label">Create Choice</label>
+        <div class="col-sm-10">
+          <input type="text" name="voteadd" class="form-control">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary btn-sm" style="margin-top: 20px; width: 100px; font-size: 17px; font-family: 'Oswald', sans-serif;">submit</button>
+        </div>
+      </div>
+      
+    </form>
+
+  </div>
+</div>  
+{% endblock mainblock%}
+  
+
+{% block footermenu %}
+<div class="row" style="Justify-content: center; display: flex;">
+  <ul class="nav justify-content-center">
+    <li class="nav-item"><a class="nav-link infolink" href="{% url 'helps' %}">Help</a></li>
+    <li class="nav-item"><a class="nav-link infolink" href="{% url 'privace' %}">Privace</a></li>
+    <li class="nav-item"><a class="nav-link infolink" href="{% url 'terms' %}">Terms</a></li>
+  </ul>
+</div>
+{% endblock footermenu %}
+

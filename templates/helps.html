@@ -1,0 +1,427 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css">
+
+    <title>{% block title %}Nexus Technologies Applications{% endblock title %}</title>
+  </head>
+  <body>
+    <div class="container-fluid"> 
+        {% comment %} page menu row {% endcomment %}
+        <div class="row" style="">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="/">Nexus Technologies</a>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"></a>
+                      </li>
+                    </ul>
+                    <ul class="navbar-nav nav Justify-content-end">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'logins' %}">LOG IN</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled" aria-current="page" href="/">|</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'signup' %}">SIGN UP</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </nav>
+        </div>
+        {% comment %} page menu end row {% endcomment %}
+
+        <div class="row" style="margin-top: 20px;">
+        <div class="container" style="">
+          <button class="accordion-button" type="button" style="display:block; text-align:center;">
+            <strong>Nexus Technologies Helps</strong>
+          </button>
+        </div>
+        </div>
+
+        {% comment %} descriptions row {% endcomment %}
+        <div class="row" style="margin-top: 20px;">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="display:block; text-align:center;">
+                    <strong>Helps Center Overview</strong>
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    {% comment %} start row Overview {% endcomment %}
+                    <div class="row">
+                      <div class="col-12 col-sm-12 col-md-6  col-lg-6 	col-xl-6 	col-xxl-6" style="margin-top: 80px;">
+                        <div class="row justify-content-center">
+                          <div class="col-lg-8 	col-xl-8 	col-xxl-8">
+                            <div class="list-group">
+                              <h6>Popular articles:</h6>
+                              <a href="#" class="list-group-item list-group-item-action" aria-current="true">Create a Nexus Account</a>
+                              <a href="#" class="list-group-item list-group-item-action">Create a strong password & a more secure account</a>
+                              <a href="#" class="list-group-item list-group-item-action">Verify your account</a>
+                              <a href="#" class="list-group-item list-group-item-action">Control what others see about you across Nexus services</a>
+                              <a href="#" class="list-group-item list-group-item-action">Someone changed your password</a>
+                              <a href="#" class="list-group-item list-group-item-action">Be ready to find a lost Android device</a>
+                              <a href="#" class="list-group-item list-group-item-action">Manage your Location History</a>
+                              <a href="#" class="list-group-item list-group-item-action">Set up a recovery phone number or email address</a>
+                              <a href="#" class="list-group-item list-group-item-action">Turn cookies on or off</a>
+                              <a href="#" class="list-group-item list-group-item-action">How to recover your Nexus Account or Gmail</a>
+                              <a href="#" class="list-group-item list-group-item-action">Find & control your Web & App Activity</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-sm-12 col-md-6  col-lg-6 	col-xl-6 	col-xxl-6" style="margin-top: 80px;">
+                        <div class="row justify-content-center">
+                          <div class="col-lg-8 	col-xl-8 	col-xxl-8">
+                            <div class="list-group">
+                              <h6>Manage your Google Account:</h6>
+                              <a href="#" class="list-group-item list-group-item-action" aria-current="true">Avoid getting locked out of your Nexus Account</a>
+                              <a href="#" class="list-group-item list-group-item-action">Manage your email addresses</a>
+                              <a href="#" class="list-group-item list-group-item-action">Manage your information</a>
+                              <a href="#" class="list-group-item list-group-item-action">Accessibility settings</a>
+                              <a href="#" class="list-group-item list-group-item-action">About Inactive Account Manager</a>
+                              <a href="#" class="list-group-item list-group-item-action">Manage your location</a>
+                              <a href="#" class="list-group-item list-group-item-action">Signing in settings</a>
+                              <a href="#" class="list-group-item list-group-item-action">Change your language on the web</a>
+                              <a href="#" class="list-group-item list-group-item-action">Transfer supervision of a child account</a>
+                              <a href="#" class="list-group-item list-group-item-action">Update your home & work settings</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-sm-12 col-md-6  col-lg-6 	col-xl-6 	col-xxl-6" style="margin-top: 80px;">
+                        <div class="row justify-content-center">
+                          <div class="col-lg-8 	col-xl-8 	col-xxl-8">
+                            <div class="list-group">
+                              <h6>Account security:</h6>
+                              <a href="#" class="list-group-item list-group-item-action" aria-current="true">Make your account more secure</a>
+                              <a href="#" class="list-group-item list-group-item-action">General security information</a>
+                              <a href="#" class="list-group-item list-group-item-action">2-Step Verification</a>
+                              <a href="#" class="list-group-item list-group-item-action">Advanced Protection</a>
+                              <a href="#" class="list-group-item list-group-item-action">Suspicious activity</a>
+                              <a href="#" class="list-group-item list-group-item-action">Manage your account permissions</a>
+                              <a href="#" class="list-group-item list-group-item-action">Enhanced Safe Browsing</a>
+                              <a href="#" class="list-group-item list-group-item-action">Sign in with Nexus</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-sm-12 col-md-6  col-lg-6 	col-xl-6 	col-xxl-6" style="margin-top: 80px;">
+                        <div class="row justify-content-center">
+                          <div class="col-lg-8 	col-xl-8 	col-xxl-8">
+                            <div class="list-group">
+                              <h6>Account recovery:</h6>
+                              <a href="#" class="list-group-item list-group-item-action" aria-current="true">How to recover your Nexus Account</a>
+                              <a href="#" class="list-group-item list-group-item-action">Tips to complete account recovery steps</a>
+                              <a href="#" class="list-group-item list-group-item-action">Secure a hacked or compromised Nexus Account</a>
+                              <a href="#" class="list-group-item list-group-item-action">Recover a recently deleted Nexus Account</a>
+                              <a href="#" class="list-group-item list-group-item-action">Find your Android device</a>
+                              <a href="#" class="list-group-item list-group-item-action">About Inactive Account Manager</a>
+                              <a href="#" class="list-group-item list-group-item-action">Why your account recovery request is delayed</a>
+                              <a href="#" class="list-group-item list-group-item-action">Change or reset your password</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-sm-12 col-md-6  col-lg-6 	col-xl-6 	col-xxl-6" style="margin-top: 80px;">
+                        <div class="row justify-content-center">
+                          <div class="col-lg-8 	col-xl-8 	col-xxl-8">
+                            <div class="list-group">
+                              <h6>Account privacy:</h6>
+                              <a href="#" class="list-group-item list-group-item-action" aria-current="true">Nexus activity controls</a>
+                              <a href="#" class="list-group-item list-group-item-action">Find, download & delete data</a>
+                              <a href="#" class="list-group-item list-group-item-action">Manage your account permissions</a>
+                              <a href="#" class="list-group-item list-group-item-action">Manage your location settings & data</a>
+                              <a href="#" class="list-group-item list-group-item-action">Delete your Nexus Account or Nexus services</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-sm-12 col-md-6  col-lg-6 	col-xl-6 	col-xxl-6" style="margin-top: 80px;">
+                        <div class="row justify-content-center">
+                          <div class="col-lg-8 	col-xl-8 	col-xxl-8">
+                            <div class="list-group">
+                              <h6>Fix a problem:</h6>
+                              <a href="#" class="list-group-item list-group-item-action" aria-current="true">How to recover your Nexus Account</a>
+                              <a href="#" class="list-group-item list-group-item-action">Tips to complete account recovery steps</a>
+                              <a href="#" class="list-group-item list-group-item-action">Secure a hacked or compromised Nexus Account</a>
+                              <a href="#" class="list-group-item list-group-item-action">Troubleshoot issues with Nexus Accounts</a>
+                              <a href="#" class="list-group-item list-group-item-action">Receiving emails from Nexus</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-sm-12 col-md-12  col-lg-12 	col-xl-12 	col-xxl-12" style="margin-top: 80px;">
+                        <div class="row justify-content-center">
+                          <div class="col-lg-6 	col-xl-6 	col-xxl-6">
+                            <div class="list-group border" style="padding: 30px; margin-bottom: 40px;">
+                              <h4 class="text-center">Need more help?</h4>
+                              <p class="text-center">Try these next steps:</p>
+                              <div class="d-grid gap-2 col-6 mx-auto">
+                                <a href="#" class="btn btn-outline-primary"><i class="bi-chat-square-text"></i></br>Aks the Help Community </br><span style="font-size: 12px;">Get Answers from community Experts</span></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {% comment %} end row Overview {% endcomment %}
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="display:block; text-align:center;">
+                    <strong>Our Community</strong>
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    {% comment %} our community start row {% endcomment %}
+                    <div class="row">
+
+                      <div class="col-12 col-sm-12 col-md-12  col-lg-12 	col-xl-12 	col-xxl-12" style="">
+                        <div class="row justify-content-center">
+                            <div class="list-group" style="padding-top: 30px;">
+                              <h1 class="text-center"><i class="bi-people"></i></h1>
+                              <h4 class="text-center">Welcome to the Google Account Help Community</h4>
+                              <p class="text-center">Try these next steps:</p>
+                            </div>
+                            <form class="row g-3 justify-content-center">
+                              <div class="col-6">
+                                <label for="inputSearch" class="visually-hidden">Search</label>
+                                <input type="text" class="form-control" id="inputSearch" placeholder="Describes your issues">
+                              </div>
+                              <div class="col-auto">
+                                <button type="submit" class="btn btn-primary mb-3"><span class="fa fa-search"></span></button>
+                              </div>
+                            </form>
+                        </div>
+                      </div>
+
+                      
+                      <div class="col-12 col-sm-12 col-md-12  col-lg-12 	col-xl-12 	col-xxl-12" style="margin-top: 40px;">
+                        <div class="row justify-content-center">
+
+                          <div class="col-lg-8 	col-xl-8 	col-xxl-8">
+
+                            <h4>Featured posts</h4>
+                            <p><a class="" href="/" style="text-decoration: none;">View all featured posts <i class="bi-arrow-right"></i></a></p>
+                            <div class="list-group border" style="padding: 30px; margin-bottom: 20px;">
+                              <h4>Learn about Online Security and how your Google Account plays a part with Guidebooks</h4>
+                              <p>Your online security is more important than ever before, and your Google Account can play a large part in that. Get step-by-step visual guides on the tools and practices that will help you protect your personal information with Google's Online Security Guidebook.</p>
+                            </div>
+                            <div class="list-group border" style="padding: 30px; margin-bottom: 20px;">
+                              <h4>Learn about Online Security and how your Google Account plays a part with Guidebooks</h4>
+                              <p>Your online security is more important than ever before, and your Google Account can play a large part in that. Get step-by-step visual guides on the tools and practices that will help you protect your personal information with Google's Online Security Guidebook.</p>
+                            </div>
+                            <div class=" border justify-content-center" style="padding: 10px; margin: 0px;">
+                              <p style="margin: 0px;"><a class="" href="/" style="text-decoration: none; margin: 0px;">Want to become a Product Expert?</a> - <a class="" href="/" style="text-decoration: none;">About the Community</a> - <a class="" href="/" style="text-decoration: none;">Community</a> - <a class="" href="/" style="text-decoration: none;">Overview Content Policy</a> </p>
+                            </div>
+
+                          </div>
+
+
+                          <div class="col-lg-8 	col-xl-8 	col-xxl-8" style="margin-top: 80px;">
+                            <h4 >Categories</h4>
+                            <p><a class="" href="{% url 'helps' %}" style="text-decoration: none;">View all posts <i class="bi-arrow-right"></i></a></p>
+
+                            <div class="row justify-content-center">
+                            <div class="col-12 col-sm-12 col-md-6  col-lg-6 	col-xl-6 	col-xxl-6" style="">
+                              <div class="list-group">
+                                <h6>Fix a problem:</h6>
+                                <a href="#" class="list-group-item list-group-item-action" aria-current="true">How to recover your Nexus Account</a>
+                                <a href="#" class="list-group-item list-group-item-action">Tips to complete account recovery steps</a>
+                                <a href="#" class="list-group-item list-group-item-action">Secure a hacked or compromised Nexus Account</a>
+                                <a href="#" class="list-group-item list-group-item-action">Recover a recently deleted Nexus Account</a>
+                                <a href="#" class="list-group-item list-group-item-action">Find your Android device</a>
+                                <a href="#" class="list-group-item list-group-item-action">About Inactive Account Manager</a>
+                                <a href="#" class="list-group-item list-group-item-action">Why your account recovery request is delayed</a>
+                                <a href="#" class="list-group-item list-group-item-action">Change or reset your password</a>
+                              </div>
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-6  col-lg-6 	col-xl-6 	col-xxl-6" style="">
+                              <div class="list-group">
+                                <h6>Account recovery:</h6>
+                                <a href="#" class="list-group-item list-group-item-action" aria-current="true">Make your account more secure</a>
+                                <a href="#" class="list-group-item list-group-item-action">General security information</a>
+                                <a href="#" class="list-group-item list-group-item-action">2-Step Verification</a>
+                                <a href="#" class="list-group-item list-group-item-action">Advanced Protection</a>
+                                <a href="#" class="list-group-item list-group-item-action">Suspicious activity</a>
+                                <a href="#" class="list-group-item list-group-item-action">Manage your account permissions</a>
+                                <a href="#" class="list-group-item list-group-item-action">Enhanced Safe Browsing</a>
+                                <a href="#" class="list-group-item list-group-item-action">Sign in with Nexus</a>
+                              </div>
+                            </div>
+                            </div>
+
+                            
+                          </div>
+
+                        </div>
+                      </div>
+
+
+
+
+
+                    </div>
+                    {% comment %} Privace Policy end row {% endcomment %}
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="display:block; text-align:center;">
+                    <strong>Get Started with Nexus Account</strong>
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    {% comment %} terms of services start row {% endcomment %}
+                    <div class="row" style="margin-top: 30px;">
+                      <div class="col-12 col-sm-12 col-md-12  col-lg-12 	col-xl-12 	col-xxl-12">
+                        <div class="row justify-content-center">
+                          <div class="col-8 col-sm-8 col-md-8 col-lg-6 	col-xl-6 	col-xxl-6">
+                            <h4 class="text-center">Nexus Account Learning Center</h4>
+                            <p class="text-center">Nexus Terms of Service | Effective <span id="curdate"></span> | Country version: Bangladesh</p>
+                            <script>
+                              const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+                              const d = new Date();
+                              let months = month[d.getMonth()];
+                              let fulldate = `${months} ${d.getUTCDate()}, ${d.getFullYear()}`;
+                              document.getElementById("curdate").innerHTML = fulldate;
+                            </script>
+                            <img src="{% static 'images/01.png' %}" class="card-img-top" style="" alt="...">
+                            <p><strong>Nexus Account Learning Center:</strong></p>
+                            <p>Welcome to the Learning Center! Here, you can find everything you need to know to get the most out of your Nexus Account.</p>
+                            <p>These Terms of Service reflect the way Nexus’s business works, the laws that apply to our company, and certain things we’ve always believed to be true. As a result, these Terms of Service help define Nexus’s relationship with you as you interact with our services. For example, these terms include the following topic headings:</p>
+                            <div style="margin-left: 15px;">
+                              <ul class="list-group">
+                                <li class="">What you can expect from us, which describes how we provide and develop our services</li>
+                                <li class="">What we expect from you, which establishes certain rules for using our services</li>
+                                <li class="">Content in nexus services, which describes the intellectual property rights to the content you find in our services </br> whether that content belongs to you, Google, or others</li>
+                                <li class="">In case of problems or disagreements, which describes other legal rights you have, and what to expect in case someone violates these terms</li>
+                                <li class="">Understanding these terms is important because, by using our services, you’re agreeing to these terms.</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    
+                    <div class="row" style="margin-top: 50px;">
+                      <div class="col-12 col-sm-12 col-md-12  col-lg-12 	col-xl-12 	col-xxl-12">
+                        <div class="row justify-content-center">
+                          <div class="col-8 col-sm-8 col-md-8 col-lg-6 	col-xl-6 	col-xxl-6">
+                            <h2>Get started</h2>
+
+                            <div class="row" style="margin-top: 20px;">
+                              <div class="col-4 col-sm-4 col-md-4 col-lg-3 	col-xl-9 	col-xxl-3"  style="margin-top: 20px;">
+                                <img src="{% static 'images/01.png' %}" class="card-img-top" style="justify-content: center; display: flex; align-items: center;" alt="...">
+                              </div>
+                              <div class="col-8 col-sm-8 col-md-8 col-lg-9 	col-xl-3 	col-xxl-9">
+                                <p><strong>Complete your Google Account setup</strong></p>
+                                <p>To get a more personal and helpful experience across Nexus products.</p>
+                                <div style="margin-left: 15px;">
+                                  <ul class="list-group">
+                                    <li class="">Add your phone number</li>
+                                    <li class="">Add recovery email address</li>
+                                    <li class="">Add your picture</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row" style="margin-top: 20px;">
+                              <div class="col-4 col-sm-4 col-md-4 col-lg-3 	col-xl-9 	col-xxl-3"  style="margin-top: 20px;">
+                                <img src="{% static 'images/01.png' %}" class="card-img-top" style="justify-content: center; display: flex; align-items: center;" alt="...">
+                              </div>
+                              <div class="col-8 col-sm-8 col-md-8 col-lg-9 	col-xl-3 	col-xxl-9">
+                                <p><strong>Simplify your life with Nexus</strong></p>
+                                <p>Make your daily tasks easier.</p>
+                                <div style="margin-left: 15px;">
+                                  <ul class="list-group">
+                                    <li class="">Add a payment method</li>
+                                    <li class="">Add your home or work address</li>
+                                    <li class="">Use Sign in with Google</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row" style="margin-top: 20px;">
+                              <div class="col-4 col-sm-4 col-md-4 col-lg-3 	col-xl-9 	col-xxl-3"  style="margin-top: 20px;">
+                                <img src="{% static 'images/01.png' %}" class="card-img-top" style="justify-content: center; display: flex; align-items: center;" alt="...">
+                              </div>
+                              <div class="col-8 col-sm-8 col-md-8 col-lg-9 	col-xl-3 	col-xxl-9">
+                                <p><strong>Choose the right Security & Privacy Settings</strong></p>
+                                <p>At Google, we take online privacy and security seriously. Receive personalized security and privacy recommendations for you.</p>
+                                <div style="margin-left: 15px;">
+                                  <ul class="list-group">
+                                    <li class="">Take a Security Checkup</li>
+                                    <li class="">Take a Privacy Checkup</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% comment %} terms of services end row {% endcomment %}
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        {% comment %} descriptions end row {% endcomment %}
+        <div class="row" style="Justify-content: center; display: flex;">
+          <ul class="nav justify-content-center">
+            <li class="nav-item"><a class="nav-link infolink" href="{% url 'helps' %}">Help</a></li>
+            <li class="nav-item"><a class="nav-link infolink" href="{% url 'privace' %}">Privace</a></li>
+            <li class="nav-item"><a class="nav-link infolink" href="{% url 'terms' %}">Terms</a></li>
+          </ul>
+        </div>
+
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

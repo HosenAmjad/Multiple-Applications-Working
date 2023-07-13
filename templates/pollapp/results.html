@@ -1,0 +1,67 @@
+{% extends 'pollapp/base.html' %}
+{% block title %} {{ uqchoice}} {% endblock title %}
+{% load static %}
+
+{% comment %} {% block mainlogo %} 
+<div class="row" style="background:#fff;">
+  <div class="col-12">
+        <a class="" aria-current="page" style="height: auto; width: 12%;" href="/">
+          <img src="{% static 'images/MdAmjadHosen.jpg' %}" class="img-fluid" style="padding: 0px; margin:0px;" alt="Nexus Technologies">
+        </a>
+  </div>
+</div>
+{% endblock mainlogo %} {% endcomment %}
+
+{% block navbar %} 
+<div class="row" style="background:#fff;">
+  <div class="col-12">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'pollindex' %}">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pollcreate' %}">CREATE</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pollresultsall' %}">RESULT</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'userlogout' %}">LOG OUT</a></li>
+          </ul>
+        </div>
+    </nav>
+  </div>
+</div>
+{% endblock navbar %}
+
+
+{% block mainblock %}
+<div class="row" style="margin-top: 20px; background-color:#fff; padding-top: 50px;">
+    <div class="col-12">
+      <h3 style="padding: 0px; margin: 0px; font-family: 'Oswald', sans-serif;"><i class="fa-solid fa-arrow-right-long"></i> {{uqchoice.question_text}} </h3>
+      <span style="font-size:12px; margin-left: 36px;">{{user.username}} | {{ uqchoice.register_on }}</span>
+  
+      <span style="font-size:12px"> </span>
+      <ul class="list-group" style="margin-top: 20px;">
+      {% for cho in uqchoice.userchoice_set.all %}
+        <li class="list-group-item"> 
+            <div class="d-flex bd-highlight">
+                <div class="p-2 flex-grow-1 bd-highlight">{{cho.choice}}</div>
+                <div class="p-2 bd-highlight"><i class="fa-solid fa-box-archive fa-fade"></i> Total Vote:  {{cho.votes}}</div>
+            </div>
+        </li>
+      {% empty %}
+        <li class="list-group"><h5 style="font-family:sans-serif;">Polls isn't available.</h5></li>
+      {% endfor %}
+      </ul>
+    </div>
+</div>
+{% endblock mainblock%}
+
+{% block footermenu %}
+      <div class="row" style="Justify-content: center; display: flex;">
+        <ul class="nav justify-content-center">
+          <li class="nav-item"><a class="nav-link infolink" href="{% url 'helps' %}">Help</a></li>
+          <li class="nav-item"><a class="nav-link infolink" href="{% url 'privace' %}">Privace</a></li>
+          <li class="nav-item"><a class="nav-link infolink" href="{% url 'terms' %}">Terms</a></li>
+        </ul>
+      </div>
+{% endblock footermenu %}

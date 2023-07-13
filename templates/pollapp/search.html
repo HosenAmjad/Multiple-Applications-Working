@@ -1,0 +1,68 @@
+{% extends 'pollapp/base.html' %}
+{% block title %} {{ uqchoice}} {% endblock title %}
+{% load static %}
+
+{% block navbar %} 
+<div class="row" style="background:#fff;">
+  <div class="col-12">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        {% comment %} <a class="" aria-current="page" style="height: auto; width: 12%;" href="/">
+          <img src="{% static 'images/mainlogo.png' %}" class="card-img-top" style="" alt="Nexus Technologies">
+        </a> {% endcomment %}
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'pollindex' %}">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pollcreate' %}">CREATE</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'pollresultsall' %}">RESULT</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'userlogout' %}">LOG OUT</a></li>
+          </ul>
+          <form class="d-flex" action="pollsearch" method="GET" style="margin-right: 20px;">
+            {% csrf_token %}
+            <input class="form-control me-2" type="text" name="searchpoll" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+  </div>
+</div>
+{% endblock navbar %}
+
+
+{% block mainblock %}
+        {% if uqchoice %}
+        {% for question in uqchoice %}
+        <div class="row" style="background: #fff; padding: 20px; margin-top: 30px">
+          <div class="col-6">
+            <ul class="nav">
+              <li><h4 style="padding: 0px; margin: 0px; font-family: 'Oswald', sans-serif;">{{question.id}} {{ question.question_text }}</h4></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul class="nav justify-content-end">
+              <li><a href="{% url 'polldetails' question.id %}" class="btn btn-outline-primary btn-sm" role="button" style="width: 100px; font-size: 17px; font-family: 'Oswald', sans-serif;">Vote</a></li>
+              <li><a href="{% url 'pollresults' question.id %}" class="btn btn-outline-success btn-sm" role="button" style="width: 100px; font-size: 17px; margin-left:10px; font-family: 'Oswald', sans-serif;">Result</a></li>
+            </ul>
+          </div>
+        </div>
+        {% empty %}
+        <div class="row" style="background: #fff; padding: 20px; margin-top: 30px">
+          <div class="col-12">
+            <ul class="nav">
+              <li><h4 style="padding: 0px; margin: 0px; font-family: 'Oswald', sans-serif;">Polls isn't available.</h4></li>
+            </ul>
+          </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="row" style="background: #fff; padding: 20px; margin-top: 30px">
+          <div class="col-12">
+            <ul class="nav">
+              <li><h4 style="padding: 0px; margin: 0px; font-family: 'Oswald', sans-serif;">No polls are available.</h4></li>
+            </ul>
+          </div>
+        </div>
+        {% endif %}
+  {% endblock mainblock%}
